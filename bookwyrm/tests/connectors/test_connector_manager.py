@@ -46,6 +46,7 @@ class ConnectorManager(TestCase):
     def test_get_connectors(self):
         """load all connectors"""
         connectors = list(connector_manager.get_connectors())
+        print(connectors)
         self.assertEqual(len(connectors), 1)
         self.assertIsInstance(connectors[0], BookWyrmConnector)
 

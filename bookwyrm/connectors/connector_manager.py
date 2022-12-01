@@ -116,6 +116,8 @@ def first_search_result(query, min_confidence=0.1):
 
 def get_connectors():
     """load all connectors"""
+    print("getting all connectors")
+    print(models.Connector.objects.order_by("priority").all())
     for info in models.Connector.objects.filter(active=True).order_by("priority").all():
         yield load_connector(info)
 
