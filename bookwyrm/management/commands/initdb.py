@@ -67,6 +67,7 @@ def init_permissions():
 
 def init_connectors():
     """access book data sources"""
+    #instead of hardcoded could be an extrenal json file?
     models.Connector.objects.create(
         identifier="bookwyrm.social",
         name="Bookwyrm.social",
@@ -103,6 +104,18 @@ def init_connectors():
         isbn_search_url="https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=ISBN:",
         priority=1,
     )
+
+    models.Connector.objects.create(
+        identifier="atenacat.cat",
+        name="Atena",
+        connector_file="atenacat",
+        base_url="https://192.168.2.156:1714",
+        books_url="https://192.168.2.156:1714",
+        covers_url="https://192.168.2.156:1714",
+        search_url="https://192.168.2.156:1714",
+        isbn_search_url="https://192.168.2.156:1714",
+        priority=1,
+    )    
 
 
 def init_settings():

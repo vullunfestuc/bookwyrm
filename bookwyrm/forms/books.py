@@ -73,6 +73,9 @@ class EditionForm(CustomForm):
             "inventaire_id": forms.TextInput(
                 attrs={"aria-describedby": "desc_inventaire_id"}
             ),
+            "atenacat_key": forms.TextInput(
+                attrs={"aria-describedby": "desc_atenacat_key"}
+            ),
             "oclc_number": forms.TextInput(
                 attrs={"aria-describedby": "desc_oclc_number"}
             ),

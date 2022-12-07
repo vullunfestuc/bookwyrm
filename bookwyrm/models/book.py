@@ -64,6 +64,11 @@ class BookDataModel(ObjectMixin, BookWyrmModel):
     )
 
     @property
+    def atenacat_link(self):
+        """generate the url from the openlibrary id"""
+        return f"https://192.168.2.156:1714/book?k={self.atenacat_key}"
+
+    @property
     def openlibrary_link(self):
         """generate the url from the openlibrary id"""
         return f"https://openlibrary.org/books/{self.openlibrary_key}"
@@ -174,6 +179,7 @@ class Book(BookDataModel):
     @property
     def edition_info(self):
         """properties of this edition, as a string"""
+        print(self)
         items = [
             self.physical_format if hasattr(self, "physical_format") else None,
             f"{self.languages[0]} language"

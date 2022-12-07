@@ -29,3 +29,6 @@ class Connector(BookWyrmModel):
 
     def __str__(self):
         return f"{self.identifier} ({self.id})"
+
+    def myData(self):
+        print(ConnectorFiles)
