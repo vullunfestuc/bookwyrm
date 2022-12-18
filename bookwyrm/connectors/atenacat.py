@@ -24,10 +24,12 @@ class Connector(AbstractConnector):
             Mapping("cover", remote_field="image", formatter=self.get_cover_url),
             Mapping("isbn13", remote_field="isbn", formatter=self.is_isbn13),
             Mapping("isbn10", remote_field="isbn",formatter=self.is_isbn10),
+            Mapping("series"),
+            Mapping("seriesNumber", remote_field="volume"),
             #Mapping("languages", remote_field="wdt:P407", formatter=self.resolve_keys),
             Mapping("publishers", remote_field="publisher",formatter=self.get_publishers),
             Mapping("publishedDate", remote_field="publishing date"),
-            #Mapping("pages", remote_field="wdt:P1104", formatter=get_first),
+            Mapping("pages", remote_field="pages"),
             Mapping("atenacatKey", remote_field="key" ),
         ] 
 
